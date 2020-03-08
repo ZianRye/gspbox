@@ -7,9 +7,6 @@
 %   [1] V. Kalofolias, How to learn a graph from smooth signals, AISTATS
 %   2016.
 %
-%   [2] V. Kalofolias, N. Perraudin, Large Scale Graph Learning From Smooth Signals, ICLR
-%   2019.
-%
 %   Suppose that we have some 2 dimensional smooth functions::
 %
 %             f1 = @(x,y) 20 * (-sin((2-x-y).^2)/2 + cos(y*3));

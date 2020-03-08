@@ -32,6 +32,10 @@ gsp_check_weights(W);
 G.W = W;
 
 % Create coordinates
+if nargin == 1
+    szw = size(W);
+    G.coords = rand(szw(1),2);
+end
 if nargin > 1
     G.coords = coords;
 end

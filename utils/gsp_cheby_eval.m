@@ -9,17 +9,19 @@ function r = gsp_cheby_eval(x,c,arange)
 %   Output parameters
 %       r       : Result
 %
-%   See also: gsp_cheby_op
-%
+%   In this function, *arrange* has to be [0, lmax ]!
 
-% Author: David K Hammond, Nathanael Perraudin, Li Fan, David Shuman
+% Author: David K Hammond, Nathanael Perraudin
 % Testing: test_dual
-% Date: 5 October 2018
+% Date: 30 December 2014
 
 % By setting the operator L to mean (pointwise) multiplication by x,
 % and f to be vector of ones, p(L)f will contain p(x) at each
 % point. This lets us use gsp_cheby_eval to evaluate the Chebyshev polynomials.
 
+if arange(1)
+    error('This function will not work!')
+end
 
 [N1,N2] = size(x);
 
@@ -27,7 +29,6 @@ L=spdiags(x(:),0,speye(numel(x)));
 f=ones(size(x(:)));
 N = length(f);
 
-G.lmin = arange(1); 
 G.lmax = arange(2);
 G.L = L;
 G.N = N;
@@ -36,5 +37,4 @@ r = gsp_cheby_op(G, c, f);
 r = reshape(r, N1, N2);
 
 end
-
 

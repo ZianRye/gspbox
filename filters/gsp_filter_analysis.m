@@ -57,11 +57,11 @@ function [c] = gsp_filter_analysis(G, fi, s, param)
 %     * 'lanczos'   : Lanczos approximation
 %     Default: if the Fourier matrix is present: 'exact' otherwise 'cheby'
 %   * *param.order* : Degree of the Chebyshev approximation
-%     Default: 30
+%     (default=30). 
 %   * *param.grid_order* : grid order used to compute quadrature 
-%     Default: param.order+1
+%     (default is param.order+1)
 %   * *param.verbose* : Verbosity level (0 no log - 1 display warnings)
-%     Default: 1   
+%     (default 1)   
 %
 %   See also: gsp_filter_synthesis gsp_filter_inverse 
 % 
